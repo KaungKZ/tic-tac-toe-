@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  width: 450px;
+  height: 450px;
+  -ms-grid-columns: (150px)[3];
+      grid-template-columns: repeat(3, 150px);
+  -ms-grid-rows: (150px)[3];
+      grid-template-rows: repeat(3, 150px);
+}
+
+.container .square {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #353535;
+  position: relative;
+  cursor: pointer;
+}
+
+.container .x,
+.container .c {
+  cursor: not-allowed;
+}
+
+.container .x::after, .container .x::before {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 8px;
+  background: #353535;
+  border-radius: 9px;
+}
+
+.container .x::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.container .x::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.container .c::before {
+  content: "";
+  width: 50%;
+  height: 50%;
+  background: #353535;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.container .c::after {
+  content: "";
+  width: 40%;
+  height: 40%;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.container .s-1,
+.container .s-2,
+.container .s-3 {
+  border-top: 0px;
+}
+
+.container .s-7,
+.container .s-8,
+.container .s-9 {
+  border-bottom: 0px;
+}
+
+.container .s-1,
+.container .s-4,
+.container .s-7 {
+  border-left: 0px;
+}
+
+.container .s-3,
+.container .s-6,
+.container .s-9 {
+  border-right: 0px;
+}
+
+.x-turn div:not(.x):not(.c):hover::after, .x-turn div:not(.x):not(.c):hover::before {
+  position: absolute;
+  content: "";
+  width: 50%;
+  height: 8px;
+  background: #c4c4c4;
+  border-radius: 9px;
+}
+
+.x-turn div:not(.x):not(.c):hover::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.x-turn div:not(.x):not(.c):hover::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.c-turn div:not(.x):not(.c):hover::before {
+  content: "";
+  width: 50%;
+  height: 50%;
+  background: #c4c4c4;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.c-turn div:not(.x):not(.c):hover::after {
+  content: "";
+  width: 40%;
+  height: 40%;
+  background: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.end-game {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: rgba(0, 0, 0, 0.65);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  -webkit-transition: all 400ms;
+  transition: all 400ms;
+}
+
+.end-game .finish-game {
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80%;
+}
+
+.end-game .finish-game .finish-text {
+  font-size: 4rem;
+  color: #fdfdfd;
+}
+
+.end-game .finish-game .restart-btn {
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  border: none;
+  outline: none;
+  background: #fdfdfd;
+  font-size: 18px;
+  border-radius: 9px;
+  -webkit-transition: background 400ms;
+  transition: background 400ms;
+}
+
+.end-game .finish-game .restart-btn:hover {
+  background: #cccccc;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 9;
+}
+/*# sourceMappingURL=style.css.map */
